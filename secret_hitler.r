@@ -42,7 +42,7 @@ AssignRoles <- function(current_players) {
 			                       "; your fellow fascists: ",
 			                       paste(current_game_players$names[current_game_players$role=="fascist"&current_game_players$names!=n],collapse=", "),
 			                       "; and Hitler is: ",
-			                       current_game_players$names[current_game_players$role=="hitler"])
+			                       current_game_players$names[current_game_players$role=="Hitler"])
 		}
 		email <- gm_mime() %>%
 			gm_to(current_game_players$email[current_game_players$names==n]) %>%
@@ -126,7 +126,6 @@ Investigate <- function (president, investigatee) {
   if (investigated_role == "Hitler") {
     investigated_role <- "fascist"
   }
-  print(investigated_role)
   email <- gm_mime() %>%
     gm_to(players$email[players$names==president]) %>%
     gm_from(admin_email) %>%
