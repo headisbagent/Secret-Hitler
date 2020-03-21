@@ -24,13 +24,15 @@ Create a new R file named "players.r" in the same directory where "secret_hitler
 	players <- data.table(names=c('Name1','Name2'),email=c('name1email','name2email'))
 And replace 'Name1' and 'Name2' with the player's name and their respective e-mails in place of 'name1email' and 'name2email'.  You can add more players in the same format.  Note that Secret Hitler is meant to be played with a minimum of 5 people and a maximum of 10 people.
 
-4. Assigning roles and sending policies
+4. Assigning roles and gameplay
 In order to send an e-mail to each player informing them of their roles, run the entire script of "secret_hitler.r" and then simply type the following into the console:
-	assignRoles(c('Name1','Name2'))
+	AssignRoles(c('Name1','Name2'))
 Where 'Name1' and 'Name2' (and upwards of 8 other names) are replaced by names of the actual players.  Note that these names must be listed in the "players.r" file.
 
-To send the randomized policy tiles to the president, enter the following:
-	createPolicyTiles('number of liberal policies remaining','number of fascist policies remaining','Name1')
-Replace 'number of liberal polices remaining' with the actual number (no quotes!), likewise with 'number of fascist policies remaining'.  Replace 'Name1' with the name of the player who is currently president.
+The main gameplay functions are as follows:
+	CreatePolicyTiles(president,previous_president=NULL)
+	ChoosePolicy(chosenPolicy)
+	ChooseRandomPolicy()
+	Investigate(president,investigatee)
 
 Questions or concerns?  E-mail me at headisbagent@gmail.com
